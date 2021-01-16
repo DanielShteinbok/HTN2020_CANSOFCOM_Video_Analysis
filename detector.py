@@ -20,8 +20,8 @@ def array_to_image(arr):
 def detect2(net, meta, image, thresh=.5, hier_thresh=.5, nms=.45):
     num = dn.c_int(0)
     pnum = dn.pointer(num)
-    dn.predict_image(net, im)
-    dets = dn.get_network_boxes(net, im.w, im.h, thresh, hier_thresh, None, 0, pnum)
+    dn.predict_image(net, image)
+    dets = dn.get_network_boxes(net, image.w, image.h, thresh, hier_thresh, None, 0, pnum)
     num = pnum[0]
     if (nms): dn.do_nms_obj(dets, num, meta.classes, nms);
 
