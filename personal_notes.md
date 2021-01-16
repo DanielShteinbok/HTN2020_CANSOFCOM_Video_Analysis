@@ -30,11 +30,12 @@ TODO as of now:
 
 # output from `yolo_int()` to `gen_sec_conf()`:
 ```python
-[
-	# each list represents a frame, there are always two
-	# each dictionary represents an object detected in the image, there can be any number
-	# box is a tuple containing the x and y coordinates of two opposite corners
-	[ {name="bird", conf=0.9544722437858582, box=(375.32257080078125, 269.09912109375, 516.5489501953125, 352.8339538574219)}, ...]
-	[ {name="bird", conf=0.9544722437858582, box=(378.32257080078125, 279.09912109375, 516.2489501953125, 354.8339538574219)}, ...]
-]
+
+# each list represents a frame, there are always two
+# each dictionary represents an object detected in the image, there can be any number
+# box is a tuple containing the x and y coordinates of two opposite corners
+[ {name="bird", conf=0.9544722437858582, box=(375.32257080078125, 269.09912109375, 516.5489501953125, 352.8339538574219)}, ...], # current frame
+[ {name="bird", conf=0.9544722437858582, box=(378.32257080078125, 279.09912109375, 516.2489501953125, 354.8339538574219)}, ...], # previous frame
+36.45 # timestamp of current frame
+
 ```
