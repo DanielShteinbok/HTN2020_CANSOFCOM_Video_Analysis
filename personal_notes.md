@@ -12,4 +12,8 @@ TODO:
 * submit a bug for opencv pacman package, as it has a dependency
 of libhdf5 that is not written in as a dependency
 
-
+Since LMAO efficiency where art thou, we'll just read a VideoCapture
+from OpenCV frame-by-frame, and shove each one through the YOLOv3
+pretrained network. So far, I have some code (I think) in
+[my fork of darknet](https://github.com/DanielShteinbok/darknet),
+see in particular the modified version of `examples/detector-scipy-opencv.py`.
