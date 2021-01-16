@@ -11,7 +11,7 @@ def print_output(current_frame_val, current_timestamp, prev_frame_val=None):
     print(prev_frame_val)
     #print(",\n")
     print(current_timestamp)
-    #print(",\n")
+    print()
 
 frame_count = 0
 prev_frame_val = None
