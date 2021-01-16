@@ -30,7 +30,7 @@ def isNew(currentFrame, previousFrame, frameNum, *args) :
                 typeNumberDict[name] -= 1
                 # print(name, "-1")
                 
-    csv_format( (dictToList(typeNumberDict), frameNum, args) )
+    formatter.csv_format( (dictToList(typeNumberDict), frameNum, args) )
     # return (dictToList(typeNumberDict), frameNum, args)
 
 # # TESTCASE
