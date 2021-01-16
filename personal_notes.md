@@ -17,3 +17,13 @@ from OpenCV frame-by-frame, and shove each one through the YOLOv3
 pretrained network. So far, I have some code (I think) in
 [my fork of darknet](https://github.com/DanielShteinbok/darknet),
 see in particular the modified version of `examples/detector-scipy-opencv.py`.
+
+TODO as of now:
+* write a python script to read my video file frame-by-frame from OpenCV's VideoCapture
+* add some stuff to shove each thing through YOLO
+	* `generate_sec_conf()` based on gaussian distribution/bounding boxes etc?
+* figure out if there are new objects
+* add something to make the stuff into, like, a csv format
+* dump the csv-formatted stuff to console
+* dump the csv-formatted stuff to *not* console (e.g. a `.csv` file??)
+* parse the csv??
