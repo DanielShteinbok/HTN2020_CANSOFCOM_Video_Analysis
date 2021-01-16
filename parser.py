@@ -2,7 +2,7 @@ import cv2
 import time
 import detector
 
-video_name = "tokyo.mp4"
+video_name = "camera-monitoring-traffic.mp4"
 capture = cv2.VideoCapture(video_name)
 
 def print_output(current_frame_val, current_timestamp, prev_frame_val=None):
@@ -15,10 +15,10 @@ def print_output(current_frame_val, current_timestamp, prev_frame_val=None):
 
 frame_count = 0
 prev_frame_val = None
-for i in range(1800):
-    capture.read()
-    frame_count += 1
-    print(frame_count)
+#for i in range(300):
+#    capture.read()
+#    frame_count += 1
+#    print(frame_count)
 
 while(capture.isOpened()):
     ret, frame = capture.read()
