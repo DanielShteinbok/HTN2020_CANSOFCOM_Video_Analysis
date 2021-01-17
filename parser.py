@@ -15,10 +15,10 @@ def print_output(current_frame_val, current_timestamp, prev_frame_val=None):
 
 frame_count = 0
 prev_frame_val = None
-#for i in range(300):
-#    capture.read()
-#    frame_count += 1
-#    print(frame_count)
+for i in range(600):
+    capture.read()
+    frame_count += 1
+    print(frame_count)
 
 while(capture.isOpened()):
     ret, frame = capture.read()
