@@ -9,7 +9,7 @@ def dictToList(dictionary) :
     return returnArray
 
 
-def isNew(currentFrame, previousFrame, frameNum, *args) :
+def isNew(currentFrame, previousFrame, frameNum) :
     # dictionary in each frame to dictionary(name: number) per
     typeNumberDict = {}
     
@@ -30,7 +30,7 @@ def isNew(currentFrame, previousFrame, frameNum, *args) :
                 typeNumberDict[name] -= 1
                 # print(name, "-1")
                 
-    formatter.csv_format( (dictToList(typeNumberDict), frameNum, args) )
+    formatter.csv_format( dictToList(typeNumberDict), frameNum )
     # return (dictToList(typeNumberDict), frameNum, args)
 
 # # TESTCASE

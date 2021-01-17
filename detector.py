@@ -3,6 +3,7 @@ sys.path.append(os.path.join(os.getcwd(),'/home/daniel/htn2020/video_summarizer/
 
 import darknet as dn
 
+#net = dn.load_net(b"/home/daniel/htn2020/video_summarizer/darknet/cfg/yolov3.cfg", b"/home/daniel/htn2020/video_summarizer/darknet/yolov3.weights", 0)
 net = dn.load_net(b"/home/daniel/htn2020/video_summarizer/darknet/cfg/yolov3.cfg", b"/home/daniel/htn2020/video_summarizer/darknet/yolov3.weights", 0)
 meta = dn.load_meta(b"/home/daniel/htn2020/video_summarizer/darknet/cfg/coco.data")
 

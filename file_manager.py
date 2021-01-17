@@ -3,3 +3,4 @@ f = open(filename, "a")
 
 def output(line_str):
     f.write(line_str + '\n')
+    print(line_str)
