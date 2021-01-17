@@ -1,4 +1,5 @@
 darknet/
+__pycache__/
 darknet-fix-opencv-4.patch  
 manhattan.mp4  
 manhattan.webm  
