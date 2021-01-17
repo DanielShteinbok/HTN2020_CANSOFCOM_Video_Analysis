@@ -1,0 +1,87 @@
+body
+{
+ width:100%;
+ margin:0 auto;
+ padding:0px;
+ font-family:helvetica;
+ align-content: center;
+}
+#wrapper
+{
+ text-align:center;
+ margin:0 auto;
+ padding:0px;
+ width:995px;
+}
+#player_wrapper
+{
+ position:relative;
+ width:800px;
+ align-content: center;
+}
+#video_player
+{
+ width:800px;
+}
+#player_controls
+{
+ top:98%;
+ position:absolute;
+ background-color:black;
+ width:100%;
+ padding:5px;
+ box-sizing:border-box;
+}
+input[type="image"]
+{
+ float:left;
+ height:20px;
+ margin-left:2px;
+ margin-right:5px;
+ margin-top:2px;
+}
+#vol_img
+{
+ margin-left:150px;
+ width:20px;
+}
+
+h1 {
+  align-content: center;
+  align-self: center;
+  align-items: center;
+}
+
+.sidenav {
+  height: 92%;
+  width: 25%;
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  background-color: #111;
+  /* padding-top: 10px;
+  padding-bottom:10px; */
+}
+
+.sidenav tr {
+  width:100%;
+  left: 0; 
+
+  /* padding-top:10px;
+  padding-left:10px;
+  padding-right:10px;
+  padding-bottom: 5px; */
+  /* padding-color: black; */
+  /* box-shadow: 0px 3px transparent; */
+  border-radius: 15px;
+
+  max-height:100px;
+  font-size: 12px;
+  background: white;
+  display: block;
+}
+
+.searchBar {
+  
+}
