@@ -27,6 +27,7 @@ while(capture.isOpened()):
         break
     current_frame_val = detector.yolo_int(frame)
     frame_count += 1
+    print("frame count: ", frame_count)
     #print_output(current_frame_val, frame_count, prev_frame_val)
     summarizer.isNew(current_frame_val, prev_frame_val, frame_count)
     prev_frame_val = current_frame_val
