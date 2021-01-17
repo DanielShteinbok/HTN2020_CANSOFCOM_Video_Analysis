@@ -1,3 +1,4 @@
+const express = require("express");
 const https = require("https")
 
 var authToken = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhYmFzZUlkIjoiYUN4MjJXNGhmNFY4eU5hRFJXVDJTSCIsImFjY2Vzc1Blcm0iOiJmdWxsIiwidG9rZW5JZCI6IlpGVHh6UEVuT3kyZEZJa0QzbmtiT3hLVXNCNW0wM3laM2JjZWhjZDltQ0RmMjhPUGhVZGgxOFB3NUZ4Z3NMaXYiLCJpYXQiOjE2MTA4NjcxODIsImV4cCI6MTYxMDkxMDM4MiwiaXNzIjoiZHJvcGJhc2UuaW8iLCJzdWIiOiJEQ2J3ZHd2UGQyYjNDN3pTS3o5WFhYIn0.0hBdKiLe25rIAXLqaU0SlBNU7iaqL2fZDGBusgNPXXM";
@@ -5,35 +6,13 @@ var authToken = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhYmFzZUlkIjo
 var databaseUrl = "https://query.dropbase.io/aCx22W4hf4V8yNaDRWT2SH/";
 var projectName = "trackingtable";
 
-/*
-function setAuth(tokenVal) {
-	authToken = tokenVal;
-}
 
-function setDatabase(url) {
-	databaseUrl = url;
-}
+//const request_sender = require("./request_sender.js");
+const app = express()
+const port = 3000
 
-function setProject(name) {
-	projectName = name;
-}
-*/
-
-/*
-exports.sendGetReq = (requestVal) => {
-	var xhttp = new XMLHttpRequest();
-	xhttp.onreadystage = function() {
-		if (this.readyState == 4 && this.status == 200) {
-			populateSideWindow(JSON.parse(this.responseText));
-		}
-	};
-	xhttp.open("GET", databaseUrl+projectName, true);
-	xhttp.setRequestHeader("Authorization", authToken);
-	xhttp.send();
-}
-*/
-
-exports.submitRequest = (query, callback) => {
+app.get('/', async (req, res) => {
+	console.log("received request");
 	let options = {
 		//hostname: databaseUrl,
 		//path: projectName + (query.length > 0) ? "?" + query : "",
@@ -44,6 +23,21 @@ exports.submitRequest = (query, callback) => {
 	path = databaseUrl + projectName;
 	console.log(path);
 
-	https.get(path, options, callback);
-};
+	https.get(path, options, async (response) => {
+		//response.on("data", (d) => {
+		await response;
+			//res.send(JSON.parse(response));
+			console.log(response.toString());
+			res.send(response.toString());
+		//});
+	});
+
+	//res.send("Hello World!");
+	return;
+});
+
+app.listen(port, () => {
+	console.log(`Example app listening at http://localhost${port}`)
+});
+
 
