@@ -1,6 +1,7 @@
 import cv2
 import time
 import detector
+import summarizer
 
 video_name = "camera-monitoring-traffic.mp4"
 capture = cv2.VideoCapture(video_name)
@@ -26,6 +27,7 @@ while(capture.isOpened()):
         break
     current_frame_val = detector.yolo_int(frame)
     frame_count += 1
-    print_output(current_frame_val, frame_count, prev_frame_val)
+    #print_output(current_frame_val, frame_count, prev_frame_val)
+    summarizer(current_frame_vale, frame_count, prev_frame_val)
     prev_frame_val = current_frame_val
 
