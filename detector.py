@@ -4,7 +4,7 @@ sys.path.append(os.path.join(os.getcwd(),'/home/daniel/htn2020/video_summarizer/
 import darknet as dn
 
 #net = dn.load_net(b"/home/daniel/htn2020/video_summarizer/darknet/cfg/yolov3.cfg", b"/home/daniel/htn2020/video_summarizer/darknet/yolov3.weights", 0)
-net = dn.load_net(b"/home/daniel/htn2020/video_summarizer/darknet/cfg/yolov3.cfg", b"/home/daniel/htn2020/video_summarizer/darknet/yolov3.weights", 0)
+net = dn.load_net(b"/home/daniel/htn2020/video_summarizer/darknet/cfg/yolov3-tiny.cfg", b"/home/daniel/htn2020/video_summarizer/darknet/yolov3-tiny.weights", 0)
 meta = dn.load_meta(b"/home/daniel/htn2020/video_summarizer/darknet/cfg/coco.data")
 
 
@@ -31,7 +31,7 @@ def detect2(net, meta, image, thresh=.5, hier_thresh=.5, nms=.45):
         for i in range(meta.classes):
             if dets[j].prob[i] > 0:
                 b = dets[j].bbox
-                res.append({"name":meta.names[i], "conf":dets[j].prob[i], "box":(b.x, b.y, b.w, b.h)})
+                res.append({"name":meta.names[i].decode("utf-8"), "conf":dets[j].prob[i], "box":(b.x, b.y, b.w, b.h)})
     res = sorted(res, key=lambda x: x["name"])
     #dn.free_image(im)
     dn.free_detections(dets, num)
